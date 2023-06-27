@@ -1,9 +1,37 @@
+
+import React, { useEffect } from 'react';
+import {BrowserRouter as Router,Routes, Route} from 'react-router-dom';
+import LandingPage from './Components/LandingPage/LandingPage';
+import Login from './Components/Login/Login';
+import Signup from './Components/Signup/Signup';
+import Home  from './Components/Home/Home';
 import './App.css';
-import LandingPage from './Components/LandingPage';
+import { useState } from 'react';
+import { auth } from "./Components/firebase";
+
+
 function App() {
+
+  const [userName, setUserName] = useState("");
+  useEffect(()=>{
+    auth.onAuthStateChanged((user) => {
+      if(user){
+        setUserName(user.displayName);
+      }else{
+        setUserName("");
+      }
+    });
+  },[]);
   return (
     <div className="App">
-  <LandingPage/>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<LandingPage/>} />
+          <Route exact path="/login" element={<Login/>} />
+          <Route exact path="/signup" element={<Signup/>} />
+          <Route exact path="/home" element={<Home name={userName}/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }

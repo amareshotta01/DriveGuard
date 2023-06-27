@@ -2,6 +2,7 @@ import React from 'react'
 import './LandingPage.css'
 import driveGuardImage from '../Images/DriveGaurd1.jpg';
 import D from '../Images/5a01ba7a7ca233f48ba627a8.png';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
@@ -12,7 +13,7 @@ const LandingPage = () => {
         <p className='text'>Welcome</p>
         <p className='text'>to</p>
         <p className='text'>DriveGuard</p>
-        <button className='btn' >Get started</button>
+        <button className='btn' ><Link to="/login">Get started</Link></button>
         </div>
         <div className="image-part">
             <img src={driveGuardImage} alt="" />
