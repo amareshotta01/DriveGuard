@@ -8,7 +8,7 @@ import Home  from './Components/Home/Home';
 import './App.css';
 import { useState } from 'react';
 import { auth } from "./Components/firebase";
-
+import Loading from './Components/Loading/loading';
 
 function App() {
 

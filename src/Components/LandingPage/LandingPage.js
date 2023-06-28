@@ -1,35 +1,37 @@
 import React, { useEffect, useRef } from 'react';
 import './LandingPage.css';
 import D from '../Images/5a01ba7a7ca233f48ba627a8.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Typed from 'typed.js';
+import loading from '../Loading/loading';
 
 const LandingPage = () => {
   const welcomeRef = useRef(null);
   const toRef = useRef(null);
   const driveGuardRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const welcomeOptions = {
-      strings: ["Welcome"],
+      strings: ['Welcome'],
       typeSpeed: 100,
       showCursor: false,
       onComplete: () => {
-        const toTyped = new Typed(toRef.current, toOptions);
-      }
+        new Typed(toRef.current, toOptions);
+      },
     };
 
     const toOptions = {
-      strings: ["to"],
+      strings: ['to'],
       typeSpeed: 100,
       showCursor: false,
       onComplete: () => {
-        const driveGuardTyped = new Typed(driveGuardRef.current, driveGuardOptions);
-      }
+        new Typed(driveGuardRef.current, driveGuardOptions);
+      },
     };
 
     const driveGuardOptions = {
-      strings: ["DriveGuard"],
+      strings: ['DriveGuard'],
       typeSpeed: 100,
       loop: false,
       showCursor: false,
@@ -42,23 +44,29 @@ const LandingPage = () => {
     };
   }, []);
 
+  const handleGetStarted = () => {
+    setTimeout(() => {
+      navigate('/login');
+    }, 5000);
+  };
+
   return (
-    <div className='container'> 
+    <div className="container">
       <div className="main-content">
         <div className="text-part">
           <div className="header">
-            <img src={D} alt="" className='logo' />
+            <img src={D} alt="" className="logo" />
             <p>rive</p>
             <p>Guard</p>
           </div>
-          <p className='text' ref={welcomeRef}></p>
-          <p className='text' ref={toRef}></p>
-          <p className='text' ref={driveGuardRef}></p>
-          <Link to="/login" className='link'>Get started</Link>
+          <p className="text" ref={welcomeRef}></p>
+          <p className="text" ref={toRef}></p>
+          <p className="text" ref={driveGuardRef}></p>
+          <button className="link" onClick={handleGetStarted}>
+            Get started
+          </button>
         </div>
-        <div className="image-part">
-          {/* Image content */}
-        </div>
+        <div className="image-part">{/* Image content */}</div>
       </div>
     </div>
   );

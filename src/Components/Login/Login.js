@@ -5,7 +5,7 @@ import { Link , useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import {signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../firebase";
-
+import Loading from '../Loading/loading';
 
 function Login() {
   const navigate = useNavigate();
@@ -38,26 +38,31 @@ function Login() {
     };
 
   return (
-    <div className={styles.container}>
-        <div className={styles.innerBox}>
-          <h1 className={styles.heading}>Login</h1>
 
-          <InputControl label="Email" placeholder="Enter email address"
-          onChange={(event) => setValues ((prev) => ({ ...prev, email: event.target.value}))}/>
-          <InputControl label="Password" type="password" placeholder="Enter password"
-          onChange={(event) => setValues ((prev) => ({ ...prev, pass: event.target.value}))}/>
+    <>
+      
+      <div className={styles.container}>
+          
+          <div className={styles.innerBox}>
+            <h1 className={styles.heading}>Login</h1>
 
-          <div className={styles.footer}>
-            <b className={styles.error}>{errorMsg}</b>
-            <button onClick={handleSubmission} disabled={submitButtonDisabled}> Login</button>
-            <p>Don't have an Account ? {" "}
-            <span><Link to="/signup">Sign Up</Link></span></p>
+            <InputControl label="Email" placeholder="Enter email address"
+            onChange={(event) => setValues ((prev) => ({ ...prev, email: event.target.value}))}/>
+            <InputControl label="Password" type="password" placeholder="Enter password"
+            onChange={(event) => setValues ((prev) => ({ ...prev, pass: event.target.value}))}/>
+
+            <div className={styles.footer}>
+              <b className={styles.error}>{errorMsg}</b>
+              <button onClick={handleSubmission} disabled={submitButtonDisabled}> Login</button>
+              <p>Don't have an Account ? {" "}
+              <span><Link to="/signup">Sign Up</Link></span></p>
+            </div>
+
+            <span className={styles.heading}><Link to="/">Back</Link></span>
+
           </div>
-
-          <span className={styles.heading}><Link to="/">Back</Link></span>
-
-        </div>
-    </div>
+      </div>
+    </>
   );
 }
 
