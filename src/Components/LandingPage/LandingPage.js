@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import './LandingPage.css';
 import D from '../Images/5a01ba7a7ca233f48ba627a8.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Typed from 'typed.js';
-import loading from '../Loading/loading';
+
 
 const LandingPage = () => {
   const welcomeRef = useRef(null);
@@ -55,8 +55,8 @@ const LandingPage = () => {
       <div className="main-content">
         <div className="text-part">
           <div className="header">
-            <img src={D} alt="" className="logo" />
-            <p>rive</p>
+          
+            <p>Drive</p>
             <p>Guard</p>
           </div>
           <p className="text" ref={welcomeRef}></p>
