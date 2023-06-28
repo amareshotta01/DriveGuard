@@ -1,15 +1,22 @@
 import React from 'react'
-import loadingGif from './Simple Car Animation.gif'; // Import the GIF file
+import loadingGif from './Simple Car Animation.gif'; 
+import { useNavigate } from 'react-router-dom';
 
-const loading = () => {
+const Loading = () => {
+  const navigate = useNavigate();
+  const handleGetStarted = () => {
+    setTimeout(() => {
+      navigate('/login');
+    }, 3000);
+  };
   return (
     <div className="text-center">
-        <img src={loadingGif} alt="loading" />
+        <img src={loadingGif} onLoad={handleGetStarted} alt="loading" />
     </div>
   )
 }
 
-export default loading
+export default Loading
 
 
 

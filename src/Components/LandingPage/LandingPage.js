@@ -46,8 +46,8 @@ const LandingPage = () => {
 
   const handleGetStarted = () => {
     setTimeout(() => {
-      navigate('/login');
-    }, 5000);
+      navigate('/loading');
+    }, 100);
   };
 
   return (
@@ -62,9 +62,9 @@ const LandingPage = () => {
           <p className="text" ref={welcomeRef}></p>
           <p className="text" ref={toRef}></p>
           <p className="text" ref={driveGuardRef}></p>
-          <button className="link" onClick={handleGetStarted}>
+          <span className="link" onClick={handleGetStarted}>
             Get started
-          </button>
+          </span>
         </div>
         <div className="image-part">{/* Image content */}</div>
       </div>

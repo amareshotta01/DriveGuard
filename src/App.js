@@ -30,6 +30,7 @@ function App() {
           <Route exact path="/login" element={<Login/>} />
           <Route exact path="/signup" element={<Signup/>} />
           <Route exact path="/home" element={<Home name={userName}/>} />
+          <Route exact path="/loading" element={<Loading/>} />
         </Routes>
       </Router>
     </div>
