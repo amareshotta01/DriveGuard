@@ -9,9 +9,8 @@
   }
   
   .innerBox {
-    min-width: 480px;
-    height: fit-content;
-    width: fit-content;
+    min-width: 350px;
+    width: 30%;
     background-color: #fff;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     padding: 30px;
@@ -67,4 +66,12 @@
     letter-spacing: 1px;
     font-size: 1rem;
     text-decoration: none;
+  }
+  @keyframes text {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
