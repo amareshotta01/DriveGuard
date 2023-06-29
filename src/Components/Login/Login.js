@@ -5,7 +5,7 @@ import { Link , useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import {signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from "../firebase";
-import Loading from '../Loading/loading';
+
 
 function Login() {
   const navigate = useNavigate();
@@ -56,9 +56,10 @@ function Login() {
               <button onClick={handleSubmission} disabled={submitButtonDisabled}> Login</button>
               <p>Don't have an Account ? {" "}
               <span><Link to="/signup">Sign Up</Link></span></p>
+              <p><span><Link to="/">Back</Link></span></p>
             </div>
 
-            <span className={styles.heading}><Link to="/">Back</Link></span>
+            
 
           </div>
       </div>

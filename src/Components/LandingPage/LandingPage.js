@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './LandingPage.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Typed from 'typed.js';
 
 
@@ -30,7 +30,7 @@ const LandingPage = () => {
     };
 
     const driveGuardOptions = {
-      strings: ['DriveGuard'],
+      strings: ['DRIVEguard'],
       typeSpeed: 100,
       loop: false,
       showCursor: false,
@@ -54,8 +54,7 @@ const LandingPage = () => {
       <div className="main-content">
         <div className="text-part">
           <div className="header">
-          
-            <b>DRIVE</b><p className='guard'> guard.</p>
+              <b>DRIVE</b><p className='guard'> guard.</p>
           </div>
           
             <b className="text" ref={welcomeRef}></b>

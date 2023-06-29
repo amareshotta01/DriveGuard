@@ -2,7 +2,7 @@
     height: 100%;
     min-height: 100vh;
     width: 100%;
-    background: linear-gradient(to right, #9900ff, #cc80ff);
+    background: linear-gradient(to right, #ffffff, #39ffff);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +13,8 @@
     height: fit-content;
     width: fit-content;
     background-color: #fff;
+    color: #fff;
+    background: linear-gradient(to right, #080414, #000048);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
     padding: 30px;
     border-radius: 10px;
@@ -37,8 +39,8 @@
   .footer button {
     outline: none;
     border: none;
-    background-color: #9900ff;
-    color: #fff;
+    background-color: #78c7f8;
+    color: #000000;
     border-radius: 5px;
     font-weight: bold;
     font-size: 1rem;
@@ -53,17 +55,19 @@
   }
   
   .footer button:hover {
-    background-color: #aa2aff;
+    background: linear-gradient( to right,#011d2f, #0275c1);
+    color: #101010;
   }
   
   .footer p {
     font-weight: 700;
-    color: #000;
+    color: #ffffff;
+
   }
   
   .footer p span a {
     font-weight: bold;
-    color: #9900ff;
+    color: #78c7f8;
     letter-spacing: 1px;
     font-size: 1rem;
     text-decoration: none;

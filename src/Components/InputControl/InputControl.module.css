@@ -7,15 +7,15 @@
   .container label {
     font-weight: 700;
     font-size: 1rem;
-    color: #313131;
+    color: #ffffff;
   }
   
   .container input {
     border-radius: 5px;
-    border: 1px solid #dddddd;
+    border: 1.15mm solid #dddddd;
     outline: none;
     padding: 10px 15px;
-    color: #000;
+    color: #000000;
   }
   
   .container input:hover {
@@ -23,5 +23,5 @@
   }
   
   .container input:focus {
-    border-color: #9900ff;
+    border-color: #4990fa;
   }
