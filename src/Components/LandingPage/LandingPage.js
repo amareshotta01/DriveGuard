@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import './LandingPage.css';
-import D from '../Images/5a01ba7a7ca233f48ba627a8.png';
 import { useNavigate } from 'react-router-dom';
 import Typed from 'typed.js';
 
@@ -56,15 +55,18 @@ const LandingPage = () => {
         <div className="text-part">
           <div className="header">
           
-            <p>Drive</p>
-            <p>Guard</p>
+            <b>DRIVE</b><p className='guard'> guard.</p>
           </div>
-          <p className="text" ref={welcomeRef}></p>
-          <p className="text" ref={toRef}></p>
-          <p className="text" ref={driveGuardRef}></p>
-          <span className="link" onClick={handleGetStarted}>
-            Get started
-          </span>
+          
+            <b className="text" ref={welcomeRef}></b>
+            <b className="text" ref={toRef}></b>
+            <b className="text" ref={driveGuardRef}></b>
+            <span className="link" onClick={handleGetStarted}>
+              Get started &rarr;
+            </span>
+          
+          
+          
         </div>
         <div className="image-part">{/* Image content */}</div>
       </div>

@@ -11,13 +11,24 @@
     overflow-y: hidden;
 }
 
+b{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}
+.guard{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+}
 .header {
     display: flex;
     position: absolute;
     align-items: center;
-    top: 2%;
-    left: 2%;
-    color: black;
+    top: 3%;
+    left: 3%;
+    color: rgb(0, 0, 0);
+    font-family: 'Gothic A1', sans-serif;
+    font-size: larger;
+    font-weight: 600;
 }
 
 
@@ -41,6 +52,7 @@
 
 .text
 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 40px;
 }
 
