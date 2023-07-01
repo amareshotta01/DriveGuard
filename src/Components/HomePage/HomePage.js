@@ -1,6 +1,6 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import map from '../Dashboard/roadnetworkimg.svg'
+import map from './roadnetworkimg.svg'
 import SearchBar from '../Bootstrap/Searchbar';
 import './HomePage.css';
 

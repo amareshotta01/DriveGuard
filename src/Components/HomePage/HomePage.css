@@ -1,6 +1,6 @@
 .image
 {
-    background-image: url(../Dashboard/roadnetworkimg.svg);
+    background-image: url(./roadnetworkimg.svg);
     height: 100vh;
 }
 .Img-text
