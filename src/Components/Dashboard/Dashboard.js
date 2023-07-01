@@ -22,19 +22,7 @@ function Dashboard() {
       }
     )
   }, [])
-
-  const handleDeleteAccount = async (e) => {
-    e.preventDefault();
-
-    try {
-      await account.delete();
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-    }
-  };
   
-
   const handleLogout = async () => {
     try{
       await account.deleteSession("current")
@@ -61,17 +49,6 @@ function Dashboard() {
               </button>
             </div>
             <div className="container-xxl border mt-5 p-3">
-              <div className="d-flex justify-content-end align-items-center">
-                <button
-                  className="btn btn-primary mx-1"
-                  onClick={() => {
-                    navigate("/forget-password");
-                  }}
-                >
-                  Change Password
-                </button>
-              </div>
-
               <div className="my-3">
                <h6>UID : {userDetails.$id} </h6>
                 <h6>Name : {userDetails.name} </h6>
@@ -81,16 +58,9 @@ function Dashboard() {
                   {userDetails.emailVerificaton ? "Verified" : "Not-Verified"}
                 </h6> */}
                 <h6>  
-                  Registered on : {new Date(userDetails.registration).toGMTString()};
+                  Registered on : {new Date(userDetails.registration).toDateString()} , 
+                                  {new Date(userDetails.registration).toLocaleTimeString()}
                 </h6>
-              </div>
-              <div className="d-flex justify-content-end align-items-center">
-                <button
-                  className="btn btn-outline-danger"
-                  onClick={(e) => handleDeleteAccount(e)}
-                >
-                  Delete Account
-                </button>
               </div>
           </div>
         </div>
