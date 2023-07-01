@@ -27,7 +27,7 @@ function Login() {
         
         try {
           await account.createEmailSession(user.email,user.password);
-          navigate("/home");
+          navigate("/homepage");
         } catch (error) {
             console.log(error);
             setErrorMsg(error);

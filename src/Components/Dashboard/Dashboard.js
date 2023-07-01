@@ -5,7 +5,7 @@ import { useNavigate} from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from "react";
 
-function Home() {
+function Dashboard() {
 
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState();
@@ -109,6 +109,6 @@ function Home() {
   );
 }
 
-export default Home;
+export default Dashboard;
 
 

@@ -38,7 +38,7 @@ function Signup () {
             user.name
           );
           await account.createEmailSession(user.email, user.password);
-          navigate("/home")
+          navigate("/dashboard")
         } 
         catch (error) {
         setErrorMsg(e.message);

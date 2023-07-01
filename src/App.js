@@ -3,7 +3,8 @@ import {BrowserRouter as Router,Routes, Route} from 'react-router-dom';
 import LandingPage from './Components/LandingPage/LandingPage';
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
-import Home  from './Components/Home/Home';
+import Dashboard  from './Components/Dashboard/Dashboard';
+import HomePage from './Components/HomePage/HomePage';
 import './App.css';
 import { useState } from 'react';
 import Loading from './Components/Loading/loading';
@@ -19,8 +20,9 @@ function App() {
           <Route exact path="/" element={<LandingPage/>} />
           <Route exact path="/login" element={<Login/>} />
           <Route exact path="/signup" element={<Signup/>} />
-          <Route exact path="/home" element={<Home/>} />
+          <Route exact path="/dashboard" element={<Dashboard/>} />
           <Route exact path="/loading" element={<Loading/>} />
+          <Route exact path='/homepage' element={<HomePage/>}/>
           <Route exact path="/forget-password" element={<ForgetPassword/>} />
         </Routes>
       </Router>

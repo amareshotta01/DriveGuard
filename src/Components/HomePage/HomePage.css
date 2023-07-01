@@ -1,0 +1,15 @@
+.image
+{
+    background-image: url(../Dashboard/roadnetworkimg.svg);
+    height: 100vh;
+}
+.Img-text
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    left:2%;
+    top:25%;
+    color: white;
+}
