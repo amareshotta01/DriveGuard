@@ -3,38 +3,35 @@ import styles from './Login.module.css'
 import InputControl from '../InputControl/InputControl';
 import { Link , useNavigate} from 'react-router-dom';
 import { useState } from 'react';
-import {signInWithEmailAndPassword} from "firebase/auth";
-import { auth } from "../firebase";
+import { account } from '../../Appwrite/appwrite.config';
 
 
 function Login() {
   const navigate = useNavigate();
-    const [values, setValues] = useState({
-        email: "",
-        pass: "",
-    });
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
     const [errorMsg, setErrorMsg] = useState("");
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
 
-    const handleSubmission = () =>{
-        if(!values.email || !values.pass){
-            setErrorMsg("Fill All Fields");
+    const loginUser = async (event) =>{
+        if(!user.email || !user.password){
+            setErrorMsg("Kindly Fill All Fields");
             return;
         }
         setErrorMsg("");
 
         setSubmitButtonDisabled(true);
-        signInWithEmailAndPassword(auth,values.email,values.pass)
-        .then(
-            async(res)=>{
-                setSubmitButtonDisabled(false);
-                navigate("/home");
-            }
-        ).catch(err => {
-            setSubmitButtonDisabled(false);
-            setErrorMsg(err.message);
-        });
+        
+        try {
+          await account.createEmailSession(user.email,user.password);
+          navigate("/home");
+        } catch (error) {
+            console.log(error);
+            setErrorMsg(error);
+        }
     };
 
   return (
@@ -46,14 +43,16 @@ function Login() {
           <div className={styles.innerBox}>
             <h1 className={styles.heading}>Login</h1>
 
-            <InputControl label="Email" placeholder="Enter email address"
-            onChange={(event) => setValues ((prev) => ({ ...prev, email: event.target.value}))}/>
+            <InputControl label="Email"  type="email" placeholder="Enter email address"
+            onChange={(event) => setUser ({ ...user, email: event.target.value})}/>
             <InputControl label="Password" type="password" placeholder="Enter password"
-            onChange={(event) => setValues ((prev) => ({ ...prev, pass: event.target.value}))}/>
+            onChange={(event) => setUser ({ ...user, password: event.target.value})}/>
+
+            
 
             <div className={styles.footer}>
               <b className={styles.error}>{errorMsg}</b>
-              <button onClick={handleSubmission} disabled={submitButtonDisabled}> Login</button>
+              <button onClick={loginUser} disabled={submitButtonDisabled}> Login</button>
               <p>Don't have an Account ? {" "}
               <span><Link to="/signup">Sign Up</Link></span></p>
               <p><span><Link to="/">Back</Link></span></p>
