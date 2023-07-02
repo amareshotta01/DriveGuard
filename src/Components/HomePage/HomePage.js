@@ -58,8 +58,9 @@ function HomePage() {
       </div>
       <div className="image">
         <div className="Img-text">
-        <p className='home-heading'>DRIVEguard.</p>
-        <p className='home-desc'>make your trip safe and easy</p>
+        <p className="home">
+        <p className='home-heading'>DRIVE</p><p className='guard'>guard.</p></p>
+        <div className='home-desc'>make your trip safe and easy</div>
         </div>
       </div>
       <div className="about-us-container">
