@@ -1,6 +1,5 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import map from '../Dashboard/roadnetworkimg.svg'
 import SearchBar from '../Bootstrap/Searchbar';
 import './HomePage.css';
 
@@ -38,11 +37,16 @@ function HomePage() {
       
       </div>
       <div className="image">
-        <SearchBar/>
         <div className="Img-text">
-        <p className='heading'>DRIVEguard.</p>
-        <p>make your trip safe and easy</p>
+        <p className='home-heading'>DRIVEguard.</p>
+        <p className='home-desc'>make your trip safe and easy</p>
         </div>
+      </div>
+      <div className="about-us-container">
+      <div className="about-us">
+        <div className="about-us-heading">About us</div>
+        <div className="about-us-desc">A comprehensive safety-focused solution to keep passengers safe and  to create a safe travel experience. This solution will leverage technology to enhance ride safety for millions of users. We aim to address the specific safety concerns of women, passengers with children, and drivers by integrating innovative features mentioned below.</div>
+      </div>
       </div>
       
       </>

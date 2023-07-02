@@ -50,10 +50,10 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className="wrapper">
       <div className="main-content">
         <div className="text-part">
-          <div className="header">
+          <div className="heading">
               <b>DRIVE</b><p className='guard'> guard.</p>
           </div>
           
