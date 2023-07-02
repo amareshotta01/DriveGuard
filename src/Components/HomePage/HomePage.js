@@ -1,6 +1,5 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import SearchBar from '../Bootstrap/Searchbar';
 import './HomePage.css';
 
 

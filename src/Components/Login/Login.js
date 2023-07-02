@@ -27,7 +27,7 @@ function Login() {
         
         try {
           await account.createEmailSession(user.email,user.password);
-          navigate("/homepage");
+          navigate("/dashboard");
         } catch (error) {
             console.log(error);
             setErrorMsg(error);
@@ -52,6 +52,7 @@ function Login() {
 
             <div className={styles.footer}>
               <b className={styles.error}>{errorMsg}</b>
+              <p><span><Link to="/forget-password">Forgot Password</Link></span></p>
               <button onClick={loginUser} disabled={submitButtonDisabled}> Login</button>
               <p>Don't have an Account ? {" "}
               <span><Link to="/signup">Sign Up</Link></span></p>
