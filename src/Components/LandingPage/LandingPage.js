@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import './LandingPage.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import {  useNavigate } from 'react-router-dom';
 import Typed from 'typed.js';
 
 
@@ -54,18 +56,15 @@ const LandingPage = () => {
       <div className="main-content">
         <div className="text-part">
           <div className="heading">
-              <b>DRIVE</b><p className='guard'> guard.</p>
+              <b>DRIVE</b><div className='logo-header'> guard.</div>
           </div>
           
             <b className="text" ref={welcomeRef}></b>
             <b className="text" ref={toRef}></b>
             <b className="text" ref={driveGuardRef}></b>
             <span className="link" onClick={handleGetStarted}>
-              Get started &rarr;
+              Get started <FontAwesomeIcon icon={faArrowRight} />
             </span>
-          
-          
-          
         </div>
         <div className="image-part">{/* Image content */}</div>
       </div>

@@ -66,6 +66,7 @@ function HomePage() {
         <div className="about-us-desc">A comprehensive safety-focused solution to keep passengers safe and  to create a safe travel experience. This solution will leverage technology to enhance ride safety for millions of users. We aim to address the specific safety concerns of women, passengers with children, and drivers by integrating innovative features mentioned below.</div>
       </div>
       </div>
+      <div className="horizontal-rule"></div>
       
       </>
   );
