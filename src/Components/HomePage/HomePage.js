@@ -48,10 +48,7 @@ function HomePage() {
            
           </Nav>
           <Navbar.Collapse className="justify-content-end m-1">
-          <Navbar.Text>
-            Signed in as: 
-          </Navbar.Text>
-          <p><span><Link to="/dashboard">{userDetails && userDetails.name}</Link></span></p>
+          <p><span ><Link to="/dashboard" className='user'>{userDetails && userDetails.name}</Link></span></p>
         </Navbar.Collapse>
       </Navbar>
       
@@ -60,7 +57,7 @@ function HomePage() {
         <div className="Img-text">
         <p className="home">
         <p className='home-heading'>DRIVE</p><p className='guard'>guard.</p></p>
-        <div className='home-desc'>make your trip safe and easy</div>
+        <div className='home-desc'>making your trip safe and easy</div>
         </div>
       </div>
       <div className="about-us-container">
