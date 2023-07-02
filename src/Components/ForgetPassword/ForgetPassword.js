@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { account } from "../../Appwrite/appwrite.config";
-import ResetPassword from "./ResetPassword";
 
 
 const ForgetPassword = () => {
