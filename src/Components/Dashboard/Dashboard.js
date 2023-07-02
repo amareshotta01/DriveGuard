@@ -31,6 +31,10 @@ function Dashboard() {
       console.log(error);
     }
   }
+
+  const handleHomeBtn = () => {
+    navigate("/homepage");
+  }
   
   return (
     <>
@@ -46,6 +50,12 @@ function Dashboard() {
                 onClick={handleLogout}
               >
                 Logout
+              </button>
+              <button
+                className="mx-2"
+                onClick={handleHomeBtn}
+              >
+                Home
               </button>
             </div>
             <div className="container-xxl border mt-5 p-3">

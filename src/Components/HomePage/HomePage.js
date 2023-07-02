@@ -1,9 +1,29 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './HomePage.css';
-
+import { account } from '../../Appwrite/appwrite.config';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function HomePage() {
+  const [userDetails, setUserDetails] = useState();
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  async function fetchData() {
+      try {
+          const response = await account.get();
+          // console.log(response);
+          setUserDetails(response);
+      } catch (error) {
+          console.log(error);
+      }
+  }
+
+
   return (
     <>
     <style>{`
@@ -29,8 +49,9 @@ function HomePage() {
           </Nav>
           <Navbar.Collapse className="justify-content-end m-1">
           <Navbar.Text>
-            Signed in as: <a href="#login">Mark Otto</a>
+            Signed in as: 
           </Navbar.Text>
+          <p><span><Link to="/dashboard">{userDetails && userDetails.name}</Link></span></p>
         </Navbar.Collapse>
       </Navbar>
       
