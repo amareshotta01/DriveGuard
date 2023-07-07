@@ -6,9 +6,9 @@ import Signup from './Components/Signup/Signup';
 import Dashboard  from './Components/Dashboard/Dashboard';
 import HomePage from './Components/HomePage/HomePage';
 import './App.css';
-import { useState } from 'react';
 import Loading from './Components/Loading/loading';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
+import ResetPassword from './Components/ForgetPassword/ResetPassword';
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
           <Route exact path="/loading" element={<Loading/>} />
           <Route exact path='/homepage' element={<HomePage/>}/>
           <Route exact path="/forget-password" element={<ForgetPassword/>} />
+          <Route exact path="/resetpassword" element={<ResetPassword/>} />
         </Routes>
       </Router>
     </div>

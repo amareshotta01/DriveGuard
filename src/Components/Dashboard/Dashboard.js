@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { account } from '../../Appwrite/appwrite.config';
 import { useNavigate} from 'react-router-dom';
 import { useState } from 'react';
@@ -34,6 +33,10 @@ function Dashboard() {
 
   const handleHomeBtn = () => {
     navigate("/homepage");
+  }
+
+  const handleLoginBtn = () => {
+    navigate("/login");
   }
   
   return (
@@ -78,11 +81,12 @@ function Dashboard() {
       ) : (
         <p className="mt-4">
           Please Login To see Profile{" "}
-          <Link to="/login">
-            <span className="bg-blue-300 p-2 cursor-pointer text-white rounded-md">
-              Login
-            </span>
-          </Link>
+          <button
+                className="mx-2"
+                onClick={handleLoginBtn}
+              >
+                Login
+              </button>
         </p>
       )}
     </>

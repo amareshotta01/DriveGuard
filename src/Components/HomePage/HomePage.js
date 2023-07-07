@@ -8,20 +8,21 @@ import { useEffect } from 'react';
 
 function HomePage() {
   const [userDetails, setUserDetails] = useState();
+  async function fetchData() {
+    try {
+        const response = await account.get();
+        // console.log(response);
+        setUserDetails(response);
+    } catch (error) {
+        console.log(error);
+    }
+  }
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  async function fetchData() {
-      try {
-          const response = await account.get();
-          // console.log(response);
-          setUserDetails(response);
-      } catch (error) {
-          console.log(error);
-      }
-  }
+  
 
 
   return (
@@ -38,22 +39,21 @@ function HomePage() {
         
     `}
     </style>
-   <div className="box">
+    <div className="box">
     <Navbar bg="color" data-bs-theme="light" className="box-shadow ">
-          <Navbar.Brand href="#home" className='m-1'>Navbar</Navbar.Brand>
-          <Nav className="me-auto  ">
+          <Navbar.Brand className='mx-3'><Navbar.Brand href="/homepage" className=' m-0 nav-drive'>DRIVE</Navbar.Brand><Navbar.Brand href="/homepage" className='nav-guard'>guard.</Navbar.Brand></Navbar.Brand>
+          <Nav className="me-auto m-1">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-           
+            <Nav.Link href="#aboutus">About us</Nav.Link>
+            <Nav.Link href="#services">Services</Nav.Link>
+            <Nav.Link href="#contactus">Contact Us</Nav.Link> 
           </Nav>
           <Navbar.Collapse className="justify-content-end m-1">
-          <p><span ><Link to="/dashboard" className='user'>{userDetails && userDetails.name}</Link></span></p>
+          <span ><Link to="/dashboard" className='user'>Hello {userDetails && userDetails.name } !</Link></span>
         </Navbar.Collapse>
-      </Navbar>
-      
-      </div>
-      <div className="image">
+    </Navbar>
+    </div>
+      <div className="image" id="home">
         <div className="Img-text">
         <p className="home">
         <p className='home-heading'>DRIVE</p><p className='guard'>guard.</p></p>
@@ -61,15 +61,19 @@ function HomePage() {
         </div>
       </div>
       <div className="about-us-container">
-      <div className="about-us">
+      <div className="about-us" id='aboutus'>
         <div className="about-us-heading">About us</div>
         <div className="about-us-desc">A comprehensive safety-focused solution to keep passengers safe and  to create a safe travel experience. This solution will leverage technology to enhance ride safety for millions of users. We aim to address the specific safety concerns of women, passengers with children, and drivers by integrating innovative features mentioned below.</div>
       </div>
+
+      <div className='services-container' id="services">
+        <div className="services-heading">Services</div>
       </div>
-      <div className="horizontal-rule"></div>
+      </div>
       
       </>
   );
 }
 
 export default HomePage;
+

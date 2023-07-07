@@ -24,17 +24,17 @@ const ResetPassword = () => {
         password.newPassword,
         password.repeatedPassword
       );
-      history.push("/home");
+      navigate("/homepage");
     } else {
-      toast.error('Both new password and the repeated password should be same');
+      alert('Both new password and the repeated password should be same');
     }
  
   };
 
   return (
     <div>
-      <div className="container-xl p-3 my-5 border">
-        <h2 className="text-center"> Reset your password </h2>
+      <div className="container-xl w-50 h-50 mt-5 border justify-content-center">
+        <h2 className="mb-4"> Reset your password </h2>
         <form className="container">
           <div className="mb-3">
             <label for="exampleInputPassword1" className="form-label">
@@ -73,7 +73,7 @@ const ResetPassword = () => {
             />
           </div>
           <button
-            className="btn btn-success"
+            className="btn btn-success mb-3"
             type="submit"
             onClick={(e) => changePassword(e)}
           >
@@ -81,17 +81,6 @@ const ResetPassword = () => {
           </button>
         </form>
       </div>
-      <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
     </div>
   );
 };
