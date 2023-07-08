@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    cursor: pointer;
 }
 html::-webkit-scrollbar {
   display: none;
@@ -102,7 +103,7 @@ html{
   {
     width: 100%;
     height: 5.4375rem;
-    color: var(--material-theme-sys-dark-surface-container-high, #2D292C);
+    color: var(--material-theme-sys-dark-surface-container-high, #49454F);
     font-size: 4rem;
     font-family: Poppins;
     font-style: normal;
@@ -112,9 +113,9 @@ html{
   .about-us-desc
   { 
     width: 66.375rem;
-    color: #383336;
-    font-size: 1.5rem;
-    font-family: Roboto;
+    color:#565355;
+    font-size: 1.4rem;
+    font-family: Poppins;
     font-style: normal;
     font-weight: 400;
     line-height: 180%;
@@ -128,13 +129,243 @@ html{
   .services-heading{
     width: 100%;
     height: 5.4375rem;
-    color: var(--material-theme-sys-dark-surface-container-high, #2D292C);
+    color: var(--material-theme-sys-dark-surface-container-high, #49454F);
     font-size: 4rem;
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     line-height: 1.25rem;
+    justify-content: center;
+    align-items: flex-start;
   }
+
+  .container{
+    width: 1360 rem;
+    margin: auto;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .seivice-items{
+    flex-basis: 40%;
+    margin: 3rem 0rem;
+    text-align: center;
+    /* width: 25rem;
+    height: 20rem;
+    padding: 1.875rem 2.5rem; */
+    padding: 20px 10px ;
+    /* background: #e0e0e0; */
+    background: white;
+    box-shadow: 0px 0px 10px 3px lightgray;
+    border-radius:0.6rem;
+    transition: 1.2s;
+    /* border-left: 17px solid #b2b2b2; */
+   
+  }
+
+  .seivice-items h3{
+    padding: 10px 10px;
+    color: #49454F;
+    font-family: Poppins;
+    font-weight: 600;
+  }
+
+  .seivice-items p{
+    color: #565355;
+    font-family: Poppins;
+    font-size: 1.1rem;
+    font-weight: 375;
+    line-height: 180%;
+    letter-spacing: 0.025rem;
+    padding: 1.875rem 2.5rem;
+
+  }
+
+  .seivice-items button{
+    background-color: #3c3b3b;
+    color: white;
+    width: 9.4375rem;
+    height: 3rem;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: auto;
+    transition: background-color 0.15s;
+  }
+  
+  .seivice-items:hover{
+    transform: scale(1.1);
+  }
+  .seivice-items:hover button{
+    background-color: #30A4FF;
+  }
+  .seivice-items:active{
+    background-color: #a1d6fe;
+  }
+  .seivice-items:active button{
+    background-color: #30A4FF;
+    color: white;
+  }
+  
+
+  /* footer */
+  footer{
+    display: fixed;
+    bottom: -1vh;
+    background-color: #080808;
+    color: white;
+    font-family: Poppins;
+    box-sizing: border-box;
+  }
+
+  footer .footer-content{
+    display: flex;
+  }
+
+  .footer-content .box{
+    flex-basis: 50%;
+    padding: 30px 20px;
+  }
+
+  .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .box p{
+    color: #d0cece;
+  }
+  
+  .box .content{
+    margin: 20px 0 0 0;
+  }
+  
+  .left .content p{
+    text-align: justify;
+  }
+
+  .left .content .social{
+    margin: 20px 0 0 0;
+  }
+
+  .left .content .social{
+    padding: 0 2px;
+  }
+
+  .left .content .social a{
+    padding: 0 2px;
+  }
+
+  .left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: #1a1a1a;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: 0.3s;
+
+  }
+
+  .left .content .social a span:hover{
+    background: #30A4FF;
+  }
+
+  .center .content .fas{
+    font-size: 1.4375rem;
+    background: #1a1a1a;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  .center .content .fas:hover{
+    background: #30A4FF;
+    transition: 0.3s
+
+  }
+
+  .center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+    padding-left: 10px;
+  }
+
+  .center .content .phone{
+    margin: 10px 0;
+  }
+
+  .right form .text{
+    font-size: 1.0625rem;
+    margin-bottom: 2px;
+    color: #656565;
+  }
+  .right form .msg{
+    margin-top: 10px;
+  }
+  .right form input, .right form textarea{
+    width: 100%;
+    font-size: 1.0625rem;
+    background: #151515;
+    padding-left: 10px;
+    border: 1px solid #222222;
+  }
+  .right form input:focus,
+  .right form textarea:focus{
+    outline-color: #30A4FF;
+  }
+  .right form input{
+    height: 35px;
+  }
+  .right form .btn{
+    margin-top: 10px;
+  }
+  .right form .btn button{
+    height: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #30A4FF;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+  }
+  .right form .btn button:hover{
+    background: #000;
+  }
+  .bottom center{
+    padding: 5px;
+    font-size: 0.9375rem;
+    background: #151515;
+  }
+  .bottom center span{
+    color: #656565;
+  }
+  .bottom center a{
+    color:#30A4FF;
+    text-decoration: none;
+  }
+  .bottom center a:hover{
+    text-decoration: underline;
+  }
+
+
+
+
+  footer .text{
+    font-family: Poppins;
+    font-size: medium;
+    color: #d0cece;
+  }
+
+ 
 
   .user {
     position: absolute;
@@ -147,4 +378,177 @@ html{
     text-decoration: none;
   }
 
-  
+
+
+  @media only screen and (min-width: 200px) and ( max-width: 570px){
+
+    /* image */
+    .home-heading{
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+    .guard{
+      font-size: 2rem;
+      margin-bottom: -1vh;
+    }
+    .home-desc{
+      font-size: medium;
+      margin-top: 5px;
+    }
+    .Img-text{
+      position: center;
+    }
+    .image {
+      display: block!important;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      /* min-height: calc(46vw -  9vh); */
+      height: 15rem;
+    }
+    /* about section */
+    .about-us {
+      padding: 2rem 0rem 3rem 0rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .about-us-heading {
+      width: 100%;
+      height: 3rem;
+      font-size: 2rem;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 1.25rem;
+    }
+    .about-us-desc{
+      font-size: small;
+      width: 80%;
+      flex-direction: column;
+      text-align: center;
+    }
+    /* service container */
+    .services-heading{
+      height: 3rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 900;
+      font-family: Poppins;
+    }
+    .container{
+      width: 100%;
+      flex-direction: column;
+    }
+    .seivice-items{
+      margin:15px;
+      font-size: small;
+      padding: 10px 10px;
+      margin: 10px;
+    }
+    .seivice-items h3{
+      font-size: large;
+    }
+    .seivice-items p{
+      font-size: 0.85rem;
+      padding: 15px 20px;
+    }
+  }
+  @media only screen and (min-width: 570px) and ( max-width: 980px){
+    /* image */
+    .home-heading{
+      font-size: 3.7rem;
+      margin-bottom: 0;
+    }
+    .guard{
+      font-size: 3rem;
+      margin-bottom: -1vh;
+    }
+    .home-desc{
+      font-size: 1.5rem;
+      margin-top: 5px;
+    }
+    .image {
+      display: block!important;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      /* min-height: calc(46vw -  9vh); */
+      height: 20rem;
+    }
+    /* about section */
+    .about-us {
+      padding: 2rem 0rem 3rem 0rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .about-us-heading {
+      width: 100%;
+      height: 3rem;
+      font-size: 2.5rem;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 1.25rem;
+    }
+    .about-us-desc{
+      font-size: medium;
+      width: 80%;
+      flex-direction: column;
+      text-align: center;
+    }
+    /* service container width= 570px - 800px */
+    .services-heading{
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 900;
+      font-family: Poppins;
+    }
+    .container{
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .seivice-items{
+      margin:15px;
+      font-size: small;
+      padding: 10px 10px;
+      margin: 10px;
+    }
+
+  }
+
+/* footer */
+
+@media screen and (max-width: 900px) {
+  footer{
+    position: relative;
+    bottom: 0px;
+    font-size: small;
+  }
+  .footer-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .footer-content .box{
+    margin: 5px 0;
+  }
+  .left .content p {
+    text-align: center;
+  }
+  .center .content .text{
+    font-size: small;
+  }
+  .right form .text{
+    font-size: small;
+  }
+  .right form input, .right form textarea{
+    font-size: small;
+  }
+  .right form .btn button{
+    font-size: small;
+  }
+}
