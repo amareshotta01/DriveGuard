@@ -1,9 +1,13 @@
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import "./HomePage.css";
-import { account } from "../../Appwrite/appwrite.config";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import './HomePage.css';
+import { account } from '../../Appwrite/appwrite.config';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 // import { library } from '@fortawesome/fontawesome-free';
 // import { faFacebookF, faInstagram, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
@@ -11,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 import { useEffect } from "react";
+import Gamify from '../Gamify/Gamify';
 
 function HomePage() {
   const navigate = useNavigate();
@@ -35,7 +40,12 @@ function HomePage() {
 
   const handleDashboard = () => {
     navigate("/dashboard");
-  };
+
+  }
+  const handleVoiceRecognition = () => {
+    navigate("/voice");
+  }
+
 
   const handleGamify = () => {
     navigate("/gamify");
@@ -142,41 +152,23 @@ function HomePage() {
           {/* service item box */}
           <div className="seivice-items">
             <h3>Voice Recognition</h3>
-            <p>
-              Monitors and analyze voice interactions between passengers and
-              drivers within the ride-hailing platform.
-            </p>
-            <button>Get Started &rarr;</button>
+            <p>Monitors and analyze voice interactions between passengers and drivers within the ride-hailing platform.</p>
+            <button onClick={handleVoiceRecognition}>Get Started <FontAwesomeIcon icon={faArrowRight} /></button>
           </div>
-
           <div className="seivice-items">
             <h3>Intelligent Trip Monitoring</h3>
-            <p>
-              Utilizes real-time data from sensor and monitors driving behavior
-              or potentially unsafe actions.
-            </p>
-            <button onClick={handleIntelligentTripMonitoring}>
-              Get Started &rarr;
-            </button>
+            <p>Utilizes real-time data from sensor and monitors driving behavior or potentially unsafe actions.</p>
+            <button onClick={handleIntelligentTripMonitoring}>Get Started <FontAwesomeIcon icon={faArrowRight} /></button>
           </div>
-
           <div className="seivice-items">
             <h3>Safety Analytics Dashboard</h3>
-            <p>
-              This dashboard enables ride-hailing companies to identify
-              patterns, uncover areas for improvement, and implement proactive
-              measures to enhance ride safety.
-            </p>
-            <button onClick={handleDashboard}>Get Started &rarr;</button>
+            <p>This dashboard enables ride-hailing companies to identify patterns, uncover areas for improvement, and implement proactive measures to enhance ride safety.</p>
+            <button onClick={handleDashboard}>Get Started <FontAwesomeIcon icon={faArrowRight} /></button>
           </div>
-
           <div className="seivice-items">
             <h3>Gamification System</h3>
-            <p>
-              This system rewards drivers for consistently adhering to safety
-              protocols and receiving positive feedback from passengers
-            </p>
-            <button onClick={handleGamify}>Get Started &rarr;</button>
+            <p>This system rewards drivers for consistently adhering to safety protocols and receiving positive feedback from passengers</p>
+            <button onClick={handleGamify}>Get Started <FontAwesomeIcon icon={faArrowRight} /></button> 
           </div>
         </div>
       </div>

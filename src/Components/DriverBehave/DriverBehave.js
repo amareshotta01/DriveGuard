@@ -15,7 +15,7 @@ const DriverBehave = () => {
     const form = e.target;
     const formData = new FormData(form);
 
-    setLoading(true); // Set loading state to true
+    setLoading(true); 
 
     try {
       const response = await fetch('/predict', {
@@ -35,7 +35,7 @@ const DriverBehave = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false); // Set loading state to false
+      setLoading(false); 
     }
   };
 

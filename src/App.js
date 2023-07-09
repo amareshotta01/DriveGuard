@@ -10,8 +10,8 @@ import Loading from './Components/Loading/loading';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
 import ResetPassword from './Components/ForgetPassword/ResetPassword';
 import DriverBehave from './Components/DriverBehave/DriverBehave'; 
+import Voice from './Components/Voice/Voice';
 import Gamify from './Components/Gamify/Gamify';
-
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
           <Route exact path="/resetpassword" element={<ResetPassword />} />
           <Route exact path="/driverbehave" element={<DriverBehave />} /> 
           <Route exact path="/gamify" element={<Gamify />} /> 
+          <Route exact path="/voice" element={<Voice />} /> 
         </Routes>
       </Router>
     </div>
