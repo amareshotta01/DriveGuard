@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import './HomePage.css';
 import { account } from '../../Appwrite/appwrite.config';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // import { library } from '@fortawesome/fontawesome-free';
 // import { faFacebookF, faInstagram, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
@@ -12,6 +13,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 function HomePage() {
+  const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState();
   async function fetchData() {
     try {
@@ -27,7 +29,13 @@ function HomePage() {
     fetchData();
   }, []);
 
-  
+  const handleIntelligentTripMonitoring = () => {
+    navigate("/driverbehave");
+  }
+
+  const handleDashboard = () => {
+    navigate("/dashboard");
+  }
 
 
   return (
@@ -45,7 +53,7 @@ function HomePage() {
     `}
     </style>
     <div className="box">
-    <Navbar bg="color" data-bs-theme="light" className="box-shadow ">
+    {/* <Navbar bg="color" data-bs-theme="light" className="box-shadow ">
           <Navbar.Brand className='mx-3'><Navbar.Brand href="/homepage" className=' m-0 nav-drive'>DRIVE</Navbar.Brand><Navbar.Brand href="/homepage" className='nav-guard'>guard.</Navbar.Brand></Navbar.Brand>
           <Nav className="me-auto m-1">
             <Nav.Link href="#home">Home</Nav.Link>
@@ -53,15 +61,32 @@ function HomePage() {
             <Nav.Link href="#services">Services</Nav.Link>
             <Nav.Link href="#contactus">Contact Us</Nav.Link> 
           </Nav>
-          <Navbar.Collapse className="justify-content-end m-1">
-          <span ><Link to="/dashboard" className='user'>Hello {userDetails && userDetails.name } !</Link></span>
-        </Navbar.Collapse>
-    </Navbar>
+    </Navbar> */}
+          <nav className="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light">
+            <div className="container-fluid">
+                {/* <Link className="navbar-brand" to="/">DRIVEguard</Link> */}
+                <Navbar.Brand className=''><Navbar.Brand href="/homepage" className=' m-0 nav-drive'>DRIVE</Navbar.Brand><Navbar.Brand href="/homepage" className='nav-guard'>guard.</Navbar.Brand></Navbar.Brand>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li className="nav-item"><Link className="nav-link" aria-current="page" to="#home">Home</Link></li>                          
+                          <li className="nav-item"><Link className="nav-link" to="#aboutus">About us</Link></li>
+                          <li className="nav-item"><Link className="nav-link" to="#services">Services</Link></li>
+                          <li className="nav-item"><Link className="nav-link" to="#contactus">Contact Us</Link></li>
+                    </ul>
+                  </div>
+            </div>
+            <Navbar.Collapse className="justify-content-end m-1">
+              <span ><Link to="/dashboard" className='user'>Hello {userDetails && userDetails.name } !</Link></span>
+            </Navbar.Collapse>
+          </nav>
     </div>
       <div className="image" id="home">
         <div className="Img-text">
-        <p className="home">
-        <p className='home-heading'>DRIVE</p><p className='guard'>guard.</p></p>
+        <span className="home">
+        <p className='home-heading'>DRIVE</p><p className='guard'>guard.</p></span>
         <div className='home-desc'>making your trip safe and easy</div>
         </div>
       </div>
@@ -78,31 +103,31 @@ function HomePage() {
           <div className='seivice-items'>
             <h3>Voice Recognition</h3>
             <p>Monitors and analyze voice interactions between passengers and drivers within the ride-hailing platform.</p>
-            <button>Click here</button>
+            <button>Get Started &rarr;</button>
           </div>
 
           <div className='seivice-items'>
             <h3>Intelligent Trip Monitoring</h3>
             <p>Utilizes real-time data from sensor and monitors driving behavior or potentially unsafe actions.</p>
-            <button>Click here</button>
+            <button onClick={handleIntelligentTripMonitoring}>Get Started &rarr;</button>
           </div>
 
           <div className='seivice-items'>
             <h3>Safety Analytics Dashboard</h3>
             <p>This dashboard enables ride-hailing companies to identify patterns, uncover areas for improvement, and implement proactive measures to enhance ride safety.</p>
-            <button>Click here</button>
+            <button onClick={handleDashboard}>Get Started &rarr;</button>
           </div>
 
           <div className='seivice-items'>
             <h3>Gamification System</h3>
             <p>This system rewards drivers for consistently adhering to safety protocols and receiving positive feedback from passengers</p>
-            <button>Click here</button> 
+            <button>Get Started &rarr;</button> 
           </div>
 
         </div>
       </div>
 
-      <div>
+      <div id="contactus">
         <footer>
           <div className='footer-content'>
             

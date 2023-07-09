@@ -43,40 +43,37 @@ function Dashboard() {
     <>
       {userDetails ? (
         <>
-          <div className="">
+          <div className="container-xl border mt-5 p-3">
             <div>
-              <p className="text-xl">Hello {userDetails.name}</p>
+              <h1 className="text-xl m-4">Hello {userDetails.name} !</h1>
             </div>
-            <div>
-              <button
-                className=""
-                onClick={handleLogout}
-              >
-                Logout
-              </button>
-              <button
-                className="mx-2"
-                onClick={handleHomeBtn}
-              >
-                Home
-              </button>
-            </div>
-            <div className="container-xxl border mt-5 p-3">
+            <hr/>
+            <div className="">
+              <h3 className="mt-4"><u>USER DETAILS</u></h3>
               <div className="my-3">
-               <h6>UID : {userDetails.$id} </h6>
-                <h6>Name : {userDetails.name} </h6>
-                <h6>Email : {userDetails.email} </h6>
+               <h4 className="">UID :<br/> </h4> <h5 className="my-3">{userDetails.$id} </h5>
+                <h4 className="">Name :<br/> </h4> <h5 className="my-3">{userDetails.name} </h5>
+                <h4 className="">Email :<br/> </h4> <h5 className="my-3">{userDetails.email} </h5>
                 {/* <h6>
                   Email Verified :
                   {userDetails.emailVerificaton ? "Verified" : "Not-Verified"}
                 </h6> */}
-                <h6>  
-                  Registered on : {new Date(userDetails.registration).toDateString()} , 
+                  
+                <h4 className=""> Registered on :<br/> </h4> <h5 className="my-3">{new Date(userDetails.registration).toDateString()} , 
                                   {new Date(userDetails.registration).toLocaleTimeString()}
-                </h6>
+                </h5>
               </div>
+              <hr />
+            </div>
+            <div className="m-4">
+              <button className="btn btn-dark" onClick={handleLogout}>
+                Logout
+              </button>
+              <button className="mx-4 btn btn-dark" onClick={handleHomeBtn}>
+                Home
+              </button>
+            </div>
           </div>
-        </div>
       </>
       ) : (
         <p className="mt-4">

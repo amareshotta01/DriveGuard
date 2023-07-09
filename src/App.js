@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './Components/LandingPage/LandingPage';
@@ -10,7 +9,8 @@ import './App.css';
 import Loading from './Components/Loading/loading';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
 import ResetPassword from './Components/ForgetPassword/ResetPassword';
-import Form from './Components/Form/Form'; 
+import DriverBehave from './Components/DriverBehave/DriverBehave'; 
+
 
 function App() {
   return (
@@ -25,7 +25,8 @@ function App() {
           <Route exact path="/homepage" element={<HomePage />} />
           <Route exact path="/forget-password" element={<ForgetPassword />} />
           <Route exact path="/resetpassword" element={<ResetPassword />} />
-          <Route exact path="/form" element={<Form />} /> 
+
+          <Route exact path="/driverbehave" element={<DriverBehave />} /> 
         </Routes>
       </Router>
     </div>
