@@ -10,6 +10,7 @@ import Loading from './Components/Loading/loading';
 import ForgetPassword from './Components/ForgetPassword/ForgetPassword';
 import ResetPassword from './Components/ForgetPassword/ResetPassword';
 import DriverBehave from './Components/DriverBehave/DriverBehave'; 
+import Gamify from './Components/Gamify/Gamify';
 
 
 function App() {
@@ -25,8 +26,8 @@ function App() {
           <Route exact path="/homepage" element={<HomePage />} />
           <Route exact path="/forget-password" element={<ForgetPassword />} />
           <Route exact path="/resetpassword" element={<ResetPassword />} />
-
           <Route exact path="/driverbehave" element={<DriverBehave />} /> 
+          <Route exact path="/gamify" element={<Gamify />} /> 
         </Routes>
       </Router>
     </div>
