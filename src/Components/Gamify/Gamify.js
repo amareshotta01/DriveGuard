@@ -109,7 +109,7 @@ const Gamify = () => {
     <div className='container-xl border mt-5 p-3'>
       <h1>Reward System</h1><hr/><hr/>
       <h3>Reward Points: {rewardPoints}</h3>
-      <button onClick={handleSafetyEvent}>Report Safety Event</button>
+      <button className="btn btn-primary" onClick={handleSafetyEvent}>Report Safety Event</button>
       <br/><br/><br/>
       <h3 className='mt-6'>My Rewards</h3>
       {rewards.length > 0 ? (

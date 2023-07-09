@@ -64,6 +64,7 @@ def predict():
     response = {'prediction': predicted_category[0]}
     return jsonify(response)
 
+
 @app.route('/predict_behavior', methods=['POST'])
 def predict_behavior():
     data = request.get_json()

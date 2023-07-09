@@ -15,7 +15,7 @@ const Voice = () => {
   const sendTranscript = () => {
     setLoading(true);
 
-    fetch('http://localhost:5000/predict_behavior', {
+    fetch('/predict_behavior', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

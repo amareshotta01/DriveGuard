@@ -205,11 +205,6 @@ function HomePage() {
                   <span className="text">Sambalpur,Odisha</span>
                 </div>
 
-                <div className="phone">
-                  <span className="fas fa-phone-alt"></span>
-                  <span className="text">+91 7890654213</span>
-                </div>
-
                 <div className="email">
                   <span className="fas fa-envelope"></span>
                   <span className="text">driveguard@gmail.com</span>
