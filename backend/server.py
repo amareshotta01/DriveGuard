@@ -85,7 +85,7 @@ def send_email(category):
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
     smtp_username = 'addedyou098@gmail.com'
-    smtp_password = 'Qwerty97#'
+    smtp_password = ''
     sender_email = 'addedyou098@gmail.com'
     recipient_email = 'showyamato97@gmail.com'
 
