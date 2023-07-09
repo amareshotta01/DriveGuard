@@ -29,6 +29,7 @@ const DriverBehave = () => {
       if (response.ok) {
         const data = await response.json();
         setPrediction(data.prediction);
+        localStorage.setItem('prediction-driver',prediction);
       } else {
         throw new Error('Prediction failed');
       }
