@@ -15,7 +15,6 @@ import { useNavigate } from 'react-router-dom';
 
 import { useState } from "react";
 import { useEffect } from "react";
-import Gamify from '../Gamify/Gamify';
 
 function HomePage() {
   const navigate = useNavigate();
