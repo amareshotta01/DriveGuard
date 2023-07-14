@@ -18,7 +18,7 @@ const DriverBehave = () => {
     setLoading(true); 
 
     try {
-      const response = await fetch('/predict', {
+      const response = await fetch('http://kamisama.pythonanywhere.com/predict', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(formData)),
         headers: {

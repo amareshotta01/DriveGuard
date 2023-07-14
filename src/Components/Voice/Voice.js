@@ -15,7 +15,7 @@ const Voice = () => {
   const sendTranscript = () => {
     setLoading(true);
 
-    fetch('/predict_behavior', {
+    fetch('http://kamisama.pythonanywhere.com/predict_behavior', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
