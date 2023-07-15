@@ -89,7 +89,7 @@
   color: #03e9f4;
 }
 .prediction {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 400px) {

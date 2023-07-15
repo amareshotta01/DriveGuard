@@ -37,6 +37,10 @@ span
     color: antiquewhite;
 }
 
+.prediction{
+  color: antiquewhite;
+}
+
 @media screen and (max-width: 500px) {
     .voice-container{
       min-width: 400px;

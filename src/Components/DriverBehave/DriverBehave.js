@@ -91,7 +91,7 @@ const DriverBehave = () => {
         )}
 
         {prediction && !loading && (
-          <h2 className='prediction'>Prediction: {prediction}</h2>
+          <h2 className='prediction'>Predicted Category: {prediction}</h2>
         )}
       </form>
     </div>

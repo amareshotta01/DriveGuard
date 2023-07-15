@@ -52,7 +52,7 @@ const Voice = () => {
       <p className='transcript-msg'> Transcript Message : {transcript}</p>
       <button className="btn btn-dark" onClick={sendTranscript}>Send Transcript</button>
       {loading && <p  className='loading'>Loading...</p>}
-      {predictedCategory && <h4>Predicted Category: {predictedCategory}</h4>}
+      {predictedCategory && <h4 className='prediction'>Predicted Category: {predictedCategory}</h4>}
     </div>
     </div>
   );
