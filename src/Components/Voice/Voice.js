@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import './Voice.css';
 
 const Voice = () => {
   const [loading, setLoading] = useState(false);
@@ -15,7 +16,7 @@ const Voice = () => {
   const sendTranscript = () => {
     setLoading(true);
 
-    fetch('http://kamisama.pythonanywhere.com/predict_behavior', {
+    fetch('https://amaresh01.pythonanywhere.com/predict_behavior', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,19 +40,20 @@ const Voice = () => {
   }
 
   return (
-    <div className='container-xl border mt-5 p-3'>
-      <span>Microphone: {listening ? 'on' : 'off'}</span><br/><br/>
+    <div className='voice-container'>
+    <div className='voice-box'>
+      <span >Microphone: {listening ? 'on' : 'off'}</span><br/><br/>
       <div>
-        <button className="mx-2 btn btn-dark" onClick={SpeechRecognition.startListening}>Start</button>
-        <button className="mx-2 btn btn-dark" onClick={SpeechRecognition.stopListening}>Stop</button>
-        <button className="mx-2 btn btn-dark" onClick={resetTranscript}>Reset</button>
+        <button className="m-2 btn btn-dark" onClick={SpeechRecognition.startListening}>Start</button>
+        <button className="m-2 btn btn-dark" onClick={SpeechRecognition.stopListening}>Stop</button>
+        <button className="m-2 btn btn-dark" onClick={resetTranscript}>Reset</button>
       </div>
-      
-      <p>{transcript}</p>
+      <br/>
+      <p className='transcript-msg'> Transcript Message : {transcript}</p>
       <button className="btn btn-dark" onClick={sendTranscript}>Send Transcript</button>
-      {loading && <p>Loading...</p>}
-      {predictedCategory && <h4>Predicted Category:{predictedCategory}</h4>}
-      {/* <Gamify predictionCategory={predictedCategory} /> */}
+      {loading && <p  className='loading'>Loading...</p>}
+      {predictedCategory && <h4>Predicted Category: {predictedCategory}</h4>}
+    </div>
     </div>
   );
 };

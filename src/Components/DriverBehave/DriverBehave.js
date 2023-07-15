@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './DriverBehave.css'
 
 const DriverBehave = () => {
   const [prediction, setPrediction] = useState('');
@@ -18,7 +19,7 @@ const DriverBehave = () => {
     setLoading(true); 
 
     try {
-      const response = await fetch('http://kamisama.pythonanywhere.com/predict', {
+      const response = await fetch('https://amaresh01.pythonanywhere.com/predict', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(formData)),
         headers: {
@@ -41,48 +42,61 @@ const DriverBehave = () => {
   };
 
   return (
-    <div className='container-xl w-50 h-50 mt-5 border justify-content-center'>
+    <div className='driver-box'>
+    <div className='predict-box '>
       <h1 className="mb-4">Predict Driver Behavior</h1>
-      <form  className="container" onSubmit={handleSubmit}>
-        <div className="mb-3">
+      <form  className="" onSubmit={handleSubmit}>
+        <div className="user-box">
+         
+          <input type="number" name="x_accel" id="x_accel" step="0.01" required/>
           <label htmlFor="x_accel">X Acceleration:</label>
-          <input type="number" name="x_accel" id="x_accel" step="0.01" required/><br/>
         </div>
-        <div className='mb-3'>      
+        <div className='user-box'>      
+          
+          <input type="number" name="y_accel" id="y_accel" step="0.01" required />
           <label htmlFor="y_accel">Y Acceleration:</label>
-          <input type="number" name="y_accel" id="y_accel" step="0.01" required /><br />
         </div>
-        <div className='mb-3'>
+        <div className='user-box'>
+          
+          <input type="number" name="z_accel" id="z_accel" step="0.01" required />
           <label htmlFor="z_accel">Z Acceleration:</label>
-          <input type="number" name="z_accel" id="z_accel" step="0.01" required /><br />
         </div>
-        <div className='mb-3'>
+        <div className='user-box'>
+          
+          <input type="number" name="x_gyro" id="x_gyro" step="0.01" required />
           <label htmlFor="x_gyro">X Gyroscope:</label>
-          <input type="number" name="x_gyro" id="x_gyro" step="0.01" required /><br />
         </div>
-        <div className='mb-3'>
+        <div className='user-box'>
+          
+          <input type="number" name="y_gyro" id="y_gyro" step="0.01" required />
           <label htmlFor="y_gyro">Y Gyroscope:</label>
-          <input type="number" name="y_gyro" id="y_gyro" step="0.01" required /><br />
         </div>
-        <div className='mb-3'>
+        <div className='user-box'>
+          
+          <input type="number" name="z_gyro" id="z_gyro" step="0.01" required />
           <label htmlFor="z_gyro">Z Gyroscope:</label>
-          <input type="number" name="z_gyro" id="z_gyro" step="0.01" required /><br />
         </div>
 
-        <div className=''>
-          <input type="submit" className="predict-btn" value="Predict" />
+
+        
+        <div className='button'>
+          {!loading && (
+            <input type="submit" className="predict-btn" value="Predict" />
+          )}
         </div>
 
         {loading && (
-          <div>LOADING...
+          <div className='loading'>LOADING...
             (This might take some time(approx. 5 minutes))</div>
         )}
 
         {prediction && !loading && (
-          <h2>Prediction: {prediction}</h2>
+          <h2 className='prediction'>Prediction: {prediction}</h2>
         )}
       </form>
     </div>
+    </div>
+
   );
 };
 

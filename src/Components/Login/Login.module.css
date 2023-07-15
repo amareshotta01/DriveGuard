@@ -9,8 +9,9 @@
   }
   
   .innerBox {
-    min-width: 350px;
-    width: 30%;
+    min-width: 450px;
+    height: fit-content;
+    width: fit-content;
     background-color: #fff;
     color: #fff;
     background: linear-gradient(to right, #080414, #000048);
@@ -82,5 +83,46 @@
     }
     to {
       transform: translateX(-100%);
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .innerBox{
+      min-width: 300px;
+      font-size: large;
+      gap: 15px;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .innerBox{
+      min-width: 70px;
+      font-size: small;
+      gap: 15px;
+    }
+  }
+
+  @media screen and (max-width: 200px) {
+    .innerBox{
+      min-width: 80px;
+      font-size: small;
+      gap: 15px;
+    }
+  }
+
+  
+  @media screen and (max-width: 150px) {
+    .innerBox{
+      min-width: 50px;
+      font-size: small;
+      gap: 15px;
+    }
+  }
+
+  @media screen and (max-width: 110px) {
+    .innerBox{
+      min-width: 20px;
+      font-size: x-small;
+      gap: 15px;
     }
   }

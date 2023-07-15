@@ -1,0 +1,122 @@
+.driver-box {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+  box-sizing: border-box;
+}
+
+.predict-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: fit-content;
+  height: fit-content;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 5px 7px rgba(20, 20, 20, 0.6);
+  border-radius: 10px;
+}
+
+.predict-box h1 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.predict-box .user-box {
+  position: relative;
+}
+
+.predict-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.predict-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.predict-box .user-box input:focus ~ label,
+.predict-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+}
+
+.predict-btn {
+  position: relative;
+  display: inline-block;
+  border: 1px solid rgb(109, 109, 109);
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+.predict-btn:hover {
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
+}
+.loading {
+  color: #03e9f4;
+}
+.prediction {
+  color: black;
+}
+
+@media screen and (max-width: 400px) {
+  .predict-box{
+    padding: 20px;
+    min-width: 200px;
+    font-size: medium;
+    width: 100vw;
+    gap: 1px;
+
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .predict-box{
+    padding: 10px;
+    min-width: 150px;
+    font-size: small;
+
+  }
+}
+
+@media screen and (max-width: 150px) {
+  .predict-box{
+    padding: auto;
+    min-width: 75px;
+    font-size: smaller;
+
+  }
+}

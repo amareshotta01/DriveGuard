@@ -72,3 +72,27 @@
     font-size: 1rem;
     text-decoration: none;
   }
+
+  @media screen and (max-width: 500px) {
+    .innerBox{
+      min-width: 300px;
+      font-size: medium;
+      gap: 15px;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    .innerBox{
+      min-width: 150px;
+      font-size: smaller;
+      gap: 15px;
+    }
+  }
+
+  @media screen and (max-width: 100px) {
+    .innerBox{
+      min-width: 50px;
+      font-size: small;
+      gap: 15px;
+    }
+  }
